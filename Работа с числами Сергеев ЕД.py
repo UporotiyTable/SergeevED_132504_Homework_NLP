@@ -1,9 +1,17 @@
+def charac_checker(word): #переделанная функция из командного кода для WORDLE, проверяет, что пользователь ввёл именно число
+    cifras = '1234567890'
+    for char in word:
+        if char not in cifras: 
+            return False
+        else:
+            return True
+
 newgame = "Y" #Позволяет запустить код заново при желании
 while newgame == "Y":
-#for i in range(1,100): # для тестирования раcкомментировать эту строку, строку 8, закомментировать строки 1, 2, 4-7
+#for i in range(1,100): # для тестирования раcкомментировать эту строку, строку 16, закомментировать строки 9, 10, 12-15
     while True:
         numb = input("Input your NUMBER in range from 1 to 99:")
-        if 1 <= int(numb) <= 99:
+        if charac_checker(numb) == True and 1 <= int(numb) <= 99:
             break
     #numb = i
     shatter = list(numb) #разделяю число на цифры
